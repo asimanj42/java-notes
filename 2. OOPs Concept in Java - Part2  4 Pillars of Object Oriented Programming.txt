@@ -1,0 +1,23 @@
+ Inheritance - bir classin basqa bir classin property ve behaviorunu inherit, yeni irsiyyetle alma xususiyyeti. Irsiyyet veren Parent class, irsiyyet alan Child class hesab olunur.
+ Inheritancein muxtelif novleri var:
+ 1. Single - child class -> parent class, vessalam, bir dene inheritance
+ 2. Multi-level - classA -> classB -> classC ve s. inheritance sanki zincir seklinde davam edir.
+ 3. Hierarchical - classB extends edir classA, hemcinin classC extends edir classA
+ 4. Multiple - classC eyni anda extends edir classA ve classB. Hansiki bu hal Javada qebul olunmur. Javada bu diamond problem adlanir. Beleki parent classlarda eyni metod olsa, child class basa dusmur ki, hansi classin xususiyyetini inherit edim.
+ Inheritancein ustunlukleri:
+ 1. Kodun reusabilitylini artirir.
+ 2. Polimorfizm inheritance in sayesinde bas verir.
+
+
+ Polimorfizm - bir metodun ferqli situasiyalarda ferqli cur davranmasidir. Meselen, bir kisi evinde ata, stadionda azarkes, is yerinde isci kimi davrana biler.
+ Polimorfizmin novleri:
+ 1. Static polimorfizm/Metod overloading/compile time - overloading metod adlari eyni, amma parametr saylari ferqli ve ya saylari eyni olarsa, tipleri ferqli olarken bas verir. Java metod parameterleri compile time da basa dusur. Return type in overloading tesiri yoxdur.
+ 2. Dynamic polimorfizm/Metod overriding/run time - child class da parent classdan inherit edilen metodun ezilmesi, child classa gore body hissesinin teyin olunmasi.
+
+ Objects relationships
+ 1. Is a - inheritance la bu relation a nail olmaq olur.
+ 2. Has a - Bir classda diger classi variable kimi teyin etmek 
+
+ Relation olunmus obyetler arasindaki assosasiya:
+ 1. Aggregation - bir obyektin end olunmasi diger obyektin end olunmasi demek deyil. Meselen, mektebde 100 dene sagird ola biler. Bir sagirdi silsem (end olunsa) mekteb silinmeyecek.
+ 2. Composition - bir obyektin end olunmasi diger obyektin end olunmasina sebeb olur. Meselen, mektebin otaqlari var. Mektebi silsek, tebii ki, otaqlarda silinecek.

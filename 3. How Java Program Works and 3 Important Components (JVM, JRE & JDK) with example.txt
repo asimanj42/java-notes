@@ -1,0 +1,6 @@
+JVM - Abstract masindir, fiziki olaraq movcud deyil.
+ Java program flow: 
+Java programi compile olunur ve bytecode cevrilir. JVM bytecode oxuyur, onlari masin kodu(1 ve 0) cevirir. Masin kodu CPU terefinden oxunur ve biz outputu gore bilirik.
+ Java platformdan asili deyil, lakin JVM platformdan asilidir, beleki her platform ucun xususi JVM lazimdir. Elimizde eger compiledan yaranmis bytecode varsa, biz bu bytecodeu istenilen JVM de calisdira bilerik. Bu uzden Java platform bagimsizdir.
+JRE - JRE = JVM + class libraries. Class libraries Javada olan kitabxanalardir.
+JDK - Kod yaza bilmek ucun lazim olan ortami temin edir. JDKya programming language, compiler, debugger daxildir. JDK = JRE + prog. lang + compiler + debugger

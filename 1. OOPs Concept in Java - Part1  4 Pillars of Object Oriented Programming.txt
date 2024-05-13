@@ -1,0 +1,17 @@
+Procedural programming:
+ 1. Program funksiyalardan ibaretdir
+ 2. Data gizledirmir, bu da ozluyunde tightly couplinge getirib cixarir. Esas diqqet funkisyalara yoneldilirir
+ 3.Overloading, inheritance, codun yeniden isledilmesi yoxdur.
+
+Obyektler real world entitylerdir. Obyektler iki seye malik olur: behavior(functionality) ve properties.
+Class yaradilacaq obyekt ucun skeleton ve ya blueprint temin edir. Classin daxilinde behavior ve properties ler yazilir. Classlar class keywordu ile yazilir.
+ 
+
+Abstraction - Meselen, masinda tormoza basiriq ve masinin sureti getdikce azalir. Lakin biz masinin suretinin nece azaldigini bilmirik. O bizim ucun abstrackt formadadir.
+Abstraction-da internal implementation gizledir ve usere ancaq en onemli funksionalliq, yeni suretin azalmasi(tormoz) teqdim edilir.
+Abstractionin advantagelari security ve developere verdiyi rahatliqdir.
+
+Encapsulation - datanin kapsullenmesi ve data uzerinde kontrolun 1 unitden idare olunmasidir.
+Encapsulation -> private propertyler ve public getter/setterlar
+Encapsulationin advantagelari loosely coupled koddur, beleki bir propertynin deyeri diger classlardaki eyni propertynin deyerine tesir etmir. Encapsulation daha yaxsi access controlu temin edir.
+ 
