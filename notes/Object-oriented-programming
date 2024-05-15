@@ -121,3 +121,4 @@ Method hiding: Parent ve child classda eyni static metodlar var. Her bir method 
 Utility method, yalniz argument qebul edib uzerinde is goren metodlari static metodlar kimi yazmaq olar.
 
 Varargs: Methodun argumentlerine istediyimiz qeder argument gondere bilerik. Methodun son argumenti varargs olmalidir. Her metodun yalniz bir varargs argumenti ola biler.
+
