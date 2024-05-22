@@ -1,0 +1,32 @@
+2 tip memory var: Stack ve Heap
+JVM bunlari manage edir ve RAM-da yer ayrilir.
+Stackin bir nece copy-si olur ve her biri bir thread ucun ayrilir.Heap ise bir copy-si olur.
+
+Stack:
+Primitv data typelar, Temporary deyiskenler, metod bloklari, obyektin referanslari, metod cagirilirken gonderilen parametrler, metodun return deyeri, exceptionlar, local deyiskenler, metodun static ve instance variable-lari stack-de saxlanilir.
+Her threadin oz stack memory-si var.
+Scope daxilindeki deyerler yalniz scope daxilinde kecerli olur. Scope bitdikden sonra ise LIFO prinsipi ile stackdan silinirler.
+Stack memory dolsa StackOverFlowError yaranir.
+
+Metod isini bitirdikden sonra stack memory-deki referncelar silinir. Ve heapdeki obyektlere reference olmur.Bu zaman Garbage Collector ishleyir ve reference olmayan obyektlari silir.
+
+Reference typelar:
+1. Strong Reference: Obyektin referencesi varsa obyekt silinmir.
+2. Weak Reference: Reference zeifdir,yeni garbage collector ise dusen kimi silinecek.
+3. Soft Reference: Weak-in bir novudur, eger ehtiyac olarsa,meselen memory dolarsa,elave yaddasa ehtiyac olarsa silinecek.
+
+Heap:
+3 hisseden ibaretdir: Young Generation, Old Generation, classmeta(java8 den evvel permgen)
+Young Generation: Burda 3 hisse var: Eden, Survivor0, Survivor1.
+Ilk defe obyektler yaradildiqda Eden hissesine dusur. Garbage Collector "Mark and Sweep" alqoritmi ile ishleyir ve obyektleri silmeye baslayir. Silinmeyen obyetkler S0-a dusur. Ve age parametri 1 vahid artir. Bu "minor Gc" adlanir.
+Age parametri thresholda catanda obyektler Old Generationa dusur. Bu zaman "major GC" olur. Old generationda obyektlerin silinmesi daha uzun vaxt alir ve daha az ishleyir.
+Metaspace ozunde class variable, constantlari saxlayir.
+
+Garbage Collector algorithmleri:
+1. Mark and Sweep: Obyektlerin referencelarini saxlayir ve referencelari olmayan obyektlari silir.
+2. Mark and Compact: Obyektleri silir ve reference bosluqlari silir.
+
+Garbage Collector tipleri:
+1. Serial GC: Single thread ile ishleyir.
+2. Parallel GC: Multi thread ile ishleyir.
+3. CMS GC: Concurrent Mark Sweep, ishleyen thread ile birlikde ishleyir.

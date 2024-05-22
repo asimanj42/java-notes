@@ -122,3 +122,14 @@ Utility method, yalniz argument qebul edib uzerinde is goren metodlari static me
 
 Varargs: Methodun argumentlerine istediyimiz qeder argument gondere bilerik. Methodun son argumenti varargs olmalidir. Her metodun yalniz bir varargs argumenti ola biler.
 
+Constructor name ile class adi eyni olmalidir. Sebeb budur ki, identify etmek asan olsun.
+Constrcutorun return type-i olmur. Sebeb kimi, eyni adli metodla ayird etmek mumkun olsun.
+Constructor'lar miras alınamadığı ve override edilemediği için, onları final yapmaya gerek yoktur.
+Constrcutor abstract ola bilmez, cunki child classda override olunmur, override olunmursa, bodysini yazmaq mumkun olmayacaq.
+
+
+
+
+
+
+
