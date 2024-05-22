@@ -127,6 +127,29 @@ Constrcutorun return type-i olmur. Sebeb kimi, eyni adli metodla ayird etmek mum
 Constructor'lar miras alınamadığı ve override edilemediği için, onları final yapmaya gerek yoktur.
 Constrcutor abstract ola bilmez, cunki child classda override olunmur, override olunmursa, bodysini yazmaq mumkun olmayacaq.
 
+Nested classlar 2 cur olur: static ve non-static(inner class)
+Static nested classlar icinde oldugu classin instance deyerlere accessi yoxdur. Static nested classlar istenilen access modifier qebul edir.
+Inner classlarin icinde oldugu classin instance ve static deyerlere accessi var.
+Local inner blocklarin arasinda yazilir ve yalniz blockun daxilinde istifade olunur. Access modifier qebul etmir.
+Nested classlarda inheritance mumkundur.
+
+Anonymous inner classlar: Abstract ve interface-i new keywordu ile implement ederken yaraniir. Adi olmur. Yalniz bir defe istifade olunur. Arxa fonda class yaranir ve bu class abstract class ve ya interface implement edir.
+
+Inner classi basqa classda extends elemek ucun:
+public class Inherit extends Outer.Inner {
+
+    public Inherit() {
+        new Outer().super();
+    }
+
+}
+new Outer().super(); bu ifade yalniz nested class ucun spesifikdir.
+Static nested classi normal qaydada inherit etmek olur.
+
+
+
+
+
 
 
 
