@@ -1,0 +1,5 @@
+Array:
+Arrayde eyni ad altinda eyni tipde olan deyerler saxlanilir. Arrayin uzunlugu sabitdir. Deyismek olmur. Arrayin elementlerini indexlerle elde edirik.
+Big o ->  access: O(1), search: O(n), insertion: O(n), deletion: O(n)
+Arrayde elementlerin indexleri 0dan baslayir. Sebeb: Arrayde elementler ardicil duzulur. Elementleri adresslemek baximindan 0-dan baslamasi daha metiqlidir. Adress = BaseAdress + (index * sizeOfDataType). Index 0-dan basladigi ucun, ilk elementin adresi BaseAdresse beraber olur.
+
