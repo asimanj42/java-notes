@@ -3,3 +3,9 @@ Arrayde eyni ad altinda eyni tipde olan deyerler saxlanilir. Arrayin uzunlugu sa
 Big o ->  access: O(1), search: O(n), insertion: O(n), deletion: O(n)
 Arrayde elementlerin indexleri 0dan baslayir. Sebeb: Arrayde elementler ardicil duzulur. Elementleri adresslemek baximindan 0-dan baslamasi daha metiqlidir. Adress = BaseAdress + (index * sizeOfDataType). Index 0-dan basladigi ucun, ilk elementin adresi BaseAdresse beraber olur.
 
+LinkedList:
+Linkedlistin Arrayden ferqli olaraq, size i dinamik deyise bilir. Arrayden element sildikde hemin elementin yeri bos qalir, bir nov yaddasdan bosuna istifade edilmis olur.
+Linkedlist de elementlerin yaddasda yeri ayri olur. Linkedlist node lardan ibaretdir. Her bir node ozunde deyyer ve sonraki node un refernce ni tutur.
+3 nov linkedlist var: singly, doubly, circular. Javada default doubly linkedlistdir.
+Big o ->  access: O(n), search: O(n), insertion: O(n), deletion: O(n)
+Memory efficient (XOR) double linkedlist: Bele linkedlistde value ve previous + next nodelarin bitwise operatorlarla hesablanmis deyerleri saxlanilir.
