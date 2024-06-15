@@ -9,3 +9,9 @@ Linkedlist de elementlerin yaddasda yeri ayri olur. Linkedlist node lardan ibare
 3 nov linkedlist var: singly, doubly, circular. Javada default doubly linkedlistdir.
 Big o ->  access: O(n), search: O(n), insertion: O(n), deletion: O(n)
 Memory efficient (XOR) double linkedlist: Bele linkedlistde value ve previous + next nodelarin bitwise operatorlarla hesablanmis deyerleri saxlanilir.
+
+Hashtable:
+Hashtable ele bir ds novudur ki, index datanin ozunden hesablanir. Bu hesablanma hash funksiyalari(alqoritmleri) sayesinde bas verir. Datalar unordered olur.
+Collision - eyni indexe ferqli datalarin dusmesi. 2 novu var: open addressing, chaining.
+Open addressing - eyni indexe dusecek data novbeti bos indexe yerlesdirilir. Eger index sonuncu indexdirse, 0-ci indexe qaytarilaraq yeniden bir-bir bos index axtarilir.
+Chaining - eyni indexe dusen datalar linkedlist kimi birbirine baglanir.
