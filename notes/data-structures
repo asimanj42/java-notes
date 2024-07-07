@@ -15,3 +15,17 @@ Hashtable ele bir ds novudur ki, index datanin ozunden hesablanir. Bu hesablanma
 Collision - eyni indexe ferqli datalarin dusmesi. 2 novu var: open addressing, chaining.
 Open addressing - eyni indexe dusecek data novbeti bos indexe yerlesdirilir. Eger index sonuncu indexdirse, 0-ci indexe qaytarilaraq yeniden bir-bir bos index axtarilir.
 Chaining - eyni indexe dusen datalar linkedlist kimi birbirine baglanir.
+Big o -> access: O(1), search: O(1), insertion: O(1), deletion: O(1) ortalamasi ucun. Amma eger collisionlar cox olarsa, big o -> access: O(n), search: O(n), insertion: O(n), deletion: O(n) olur.
+
+Stack:
+LIFO - Last in first out. Stackde elementler yuxaridan elave olunur ve yuxaridan silinir. Stackde 2 əsas emeliyyat var: push, pop.
+Underflow - bos stackden element silmek isteyende.
+Overflow - dolu stacke element elave etmek isteyende.
+Push - element elave etmek, Pop - element silmek.
+Big o -> access: O(n), search: O(n), insertion: O(1), deletion: O(1)
+
+Queue:
+FIFO - First in first out. Queue de elementler yuxaridan elave olunur, asagidan silinir. Queue de 2 əsas emeliyyat var: enqueue, dequeue.
+Enqueue - element elave etmek, Dequeue - element silmek.
+Big o -> access: O(n), search: O(n), insertion: O(1), deletion: O(1)
+Priority Queue - Adi queue den ferqli olaraq, elementler sorted duzulur.

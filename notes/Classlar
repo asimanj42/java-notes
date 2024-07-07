@@ -1,0 +1,62 @@
+Nested classlar 2 cur olur: static ve non-static(inner class)
+Static nested classlar icinde oldugu classin instance deyerlere accessi yoxdur. Static nested classlar istenilen access modifier qebul edir.
+Inner classlarin icinde oldugu classin instance ve static deyerlere accessi var.
+Local inner blocklarin arasinda yazilir ve yalniz blockun daxilinde istifade olunur. Access modifier qebul etmir.
+Nested classlarda inheritance mumkundur.
+
+Anonymous inner classlar: Abstract ve interface-i new keywordu ile implement ederken yaraniir. Adi olmur. Yalniz bir defe istifade olunur. Arxa fonda class yaranir ve bu class abstract class ve ya interface implement edir.
+
+Inner classi basqa classda extends elemek ucun:
+public class Inherit extends Outer.Inner {
+
+    public Inherit() {
+        new Outer().super();
+    }
+
+}
+new Outer().super(); bu ifade yalniz nested class ucun spesifikdir.
+Static nested classi normal qaydada inherit etmek olur.
+
+Generic:
+Generic bize compile time safety verir.
+Generic olmayan class generic classi extend etse, generic classin type i qeyd olunmalidir.
+Generic class diger generic classi extend etse, type qeyd olunmaya biler.
+Upperbound - T extends Number, Lowerbound - T super Number
+
+Multiple bound:
+public class MultipleBound<T extends A & B & C> {
+    ...
+}
+
+POJO - Plain Old Java Object
+Variablelar, getter ve setterlerden ibaretdir. Public default constructoru var. @Entity @Table kimi annotationlar olmur. Hec bir class ve interface extend etmir.
+
+Enumda constanlar saxlanilir. Constructor u private olur. Initialize olunmur. java.lang.Enum classini extend edir. Her hansi class enum i extend ede bilmez.
+
+Singleton:
+eager, lazy, thread safe, double checked locking, bill pugh
+Double check de object volatile olmalidir. Cunki, ele hal ola bilir ki, thread datani rama yox, cache de saxlasin. Diger thread bu cachde ki datani oxuya bilmediyi ucun, yeni object yaradacaq. Volatile yazilsa thread datani ramdan oxuyacaq.
+Bill pugh da inner static class yaradilir ve bu classda singleton object yaradilir. Nested classlar yalniz cagirildigi zaman yaradilir.
+
+Immutable class:
+Classin deyerleri deyismir. Deyerler final olur. Constructor da initialize olunur. Getterler var. Setterler yoxdur. Class final olmalidir. Getter deyerlerin copy-sini return edir. Deyerlerin deyismemesi ucun clone methodu override olunur.
+
+Interface:
+Interface classlarin mueyyen davranislari icra etmeli oldugunu gosteren contractdir. Interface classin ne edeceyini gosterir, amma nece edeciyini gostermir.
+Interface public ve ya default olur. Private ve protected olmaz. Bir interface diger interfacei extend ede biler.
+Bir class eyni adli metodlari birden cox interface-den implement ede biler.
+Fieldlar ancaq public static final olur. Metodlar protected ola bilmez.
+Class implements etdiyi metodun access modifierini azaltmaq olmaz. Interface metodu publicdirse, classda da protected ve ya private olmaz.
+Default metodlar classlar ucun umumi olur deye istifade olunur. Meselen, collectionlarda stream() metodu defaultdur, cunki ekser collectionlar ucun umumi olur. Iki interfacede eyni adli default metod varsa, class bu metodlardan birini override etmelidir.
+Static metodlarin bosysi olur, override olunmur.
+Private, Private static metodlar yalniz interface-de istifade olunur ve bodysi olur. Kod tekrari olmamasi ucun istifade olunur.
+X interfacedeki default metodu cagirmaq ucun: X.super.metodAdi();
+
+Functional interface ve lambda:
+Lambda expressionlar kodun oxunabilirliyini artirir.
+Consumer - Input alir, void return edir.
+Supplier - Input almaz, output return edir.
+Predicate - Input alir, boolean return edir.
+Function<T, R> - Input T alir, output R return edir.
+
+Functional interface diger interfacei extend ede bilmez (yalniz bir abstract metodu varsa, metod adlari eyni olsa isleyir).
