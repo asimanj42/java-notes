@@ -29,3 +29,34 @@ FIFO - First in first out. Queue de elementler yuxaridan elave olunur, asagidan 
 Enqueue - element elave etmek, Dequeue - element silmek.
 Big o -> access: O(n), search: O(n), insertion: O(1), deletion: O(1)
 Priority Queue - Adi queue den ferqli olaraq, elementler sorted duzulur.
+
+Tree:
+Tree linkedlistden ferqli olaraq, bir node in birden cox child i ola bilir. Tree de 2 əsas node var: root, leaf.
+Binary Tree - Her bir node un en cox 2 child i ola bilir.
+Binary Search Tree - Her bir node un sol child i ondan kicik, sag child i ondan boyuk olmalidir.
+Big o -> access: O(log n), search: O(log n), insertion: O(log n), deletion: O(log n)
+Tree de traversal 3 novdur: inorder, preorder, postorder.
+Preorder - root, left, right
+     A
+    / \
+   B   C
+  / \   \
+ D   E   F
+Preorder - A, B, D, E, C, F
+
+Inorder - left, root, right
+     A
+    / \
+   B   C
+  / \   \
+ D   E   F
+Inorder - D, B, E, A, C, F
+
+Postorder - left, right, root
+     A
+    / \
+   B   C
+  / \   \
+ D   E   F
+Postorder - D, E, B, F, C, A
+

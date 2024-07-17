@@ -1,0 +1,52 @@
+Bubble sort: Evvelce 1ci 2ci ile, sonra 2ci 3cu ile, 3cu 4cu ile ve s. muqayise edilir. Boyuk eded saga atilir. En boyuk eded tapilana qede bu davam edir. 1ci dovrde en boyuk eded sagda olur.
+Big(O) = O(n^2)
+    public static void bubbleSort(int[] arr) {
+        int n = arr.length;
+        int temp = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < (n - i); j++) {
+                if (arr[j - 1] > arr[j]) {
+                    //swap elements
+                    temp = arr[j - 1];
+                    arr[j - 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+
+Selection sort: 1ci eded en kicik eded kimi qebul edilir. Sonra novbeti ededler bu 1ci ededle muqayise edilir. 1ciden kicikdirse deyisdirilir. Taa ki, listin sonuna qeder dovr edenedek. Belece en kicik 1ci siraya dusur. Novbeti dongu ise artiq novbeti indexden baslayir.
+Big(O) = O(n^2)
+    public static void selectionSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int index = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[index]) {
+                    index = j;
+                }
+            }
+            int smallerNumber = arr[index];
+            arr[index] = arr[i];
+            arr[i] = smallerNumber;
+        }
+    }
+
+    Meselen: 5 3 8 4 2
+    1ci dovr: 2 3 8 4 5
+    2ci dovr: 2 3 8 4 5
+    3cu dovr: 2 3 4 8 5
+    4cu dovr: 2 3 4 5 8
+
+Insertion sort: Cox maraqli algoritmdir. 3, 5, 8, 4, 2, 1, 9, 7, 6 . Array 1ci elementi sorted hesab olunur. 2ci element ozunden gerideki ededleri muqayise olunaraq onlari arasina insert olunur.
+Big(O) = O(n^2)
+     public static void insertionSort(int[] array) {
+            for (int i = 1; i < array.length; i++) {
+                int current = array[i];
+                int j = i - 1;
+                while (j >= 0 && current < array[j]) {
+                    array[j + 1] = array[j];
+                    j--;
+                }
+                array[j + 1] = current;
+            }
+        }

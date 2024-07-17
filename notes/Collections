@@ -1,0 +1,21 @@
+Arrays.sort() - Parametr kimi int[] olarsa, quicksort algoritmi ile sort edir. Parametr kimi wrapper sinif olarsa mergesort.
+Collections.sort() mergesortla isleyir, daxilde Arrays.sort metodu cagirir.
+Priority queue - Queue natural orderla yigilmis formasidir. Heap strukturu ile implement olunur. Default olaraq min heapdir, yeni en kicik element en ustde olur. Deyismek ucun Constructora Comparator parametr vermek lazimdir.
+
+HashMap:
+Key duplicate ola bilmir, value ola bilir. Eyni key insert olunsa override olunacaq. Keyde valueda null ola biler. Key null olarsa 1ci buckete dusecek.
+Entry key ve value cutluyunun birge adi (interface). HashMapde Node Entryni implement edir. Nodeda key, value, next ve hash kodu saxlanir. HashMap default olaraq 16 buckete sahibdir. Load factor 0.75dir, yeni 12 element daxil olunca 16*0.75=12 olur, yeni 13 element daxil olunanda 32 buckete kecir. Load factoru artirmaq ucun constructora load factor parametr vermek lazimdir. HashMap Entry ve ya Nodelarin arrayinden ibaretdir. Umumi olaraq bu array table adlanir.
+put metodunun isleme prinsipi:
+1. Keyin hash kodu tapilir. hashcode ile table size arasinda emeliyyatdan sonra hansi buckete duseceyi mueyyenlesdirilir.
+2. Eger bu bucketde Entry yoxdursa yeni Entry yaradilir ve bu buckete elave olunur.
+Collision nedir: Eyni hash koduna sahib olan iki keyin bir buckete dusemesi.
+Interview suali: Hashcode metodu ancaq eyni deyer return etse ne olacaq?
+Cavab: Eyni buckete dusecekler ve bu bucketde Entryler linked list kimi yigilacaq. Bu da performance problemlerine sebeb olacaq. Cunki, normalda hashmap de big O(1) complexity var, amma linked list kimi yigilarsa big O(n) olacaq.
+3. Eger bu bucketde Entry varsa, yeni Entry yaradilir ve bu Entryin nexti var olan Entrye set olunur. Yeni Entryin nexti null olur.
+
+Equals ve Hashcode metodu:
+eger hashcodelari beraberdirse, equalslari beraber olmaliya biler, eger equalslari beraberdirse, mutleq hashcodelari da beraber olmalidir.
+
+Rehashing: HashMapde load factor 0.75dir. 12 element daxil olunca 16*0.75=12 olur, yeni 13 element daxil olunanda 32 buckete kecir. Rehashing zamaninda yeni table yaradilir ve butun Entryler yeni tableye elave olunur. Bu zaman butun Entrylerin hash kodlari yeniden hesablanir.
+Threeify_threeshold: HashMapde 8 element daxil olunca Entrylerin linked listi treeify olunur. Treeify olunma zamani linked listin uzunlugu 8den cox olmalidir. Treeify zamani linked list binary search treeye cevrilir. Treeify zamani linked listin big O(n) complexitysi big O(logn) olur.
+

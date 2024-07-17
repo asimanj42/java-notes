@@ -1,0 +1,26 @@
+Process - Icra oluna bilen program instancedir. Her processin oz resurslari olur ve bu resurslar paylasilmir.
+Thread - Processe nisbeten daha kicik is hisseciyidir.
+Biz java programmini run etdikde, bir process ve yeni bir JVM instance yaranir. JVM instance i ozunde memory, code segment, data segment, register, stack, counter ve threadlerden ibaretdir. Her thread ucun ayri register, stack ve counter olur.
+Code segment: JVM instance ozunun interpreteri olan JIT compiler vasitesi ile bytecode i machine code a cevirir. Bu code segmentde machine code saxlanilir. Read only memorydir.
+Data segment: Global ve static variablelar saxlanir.
+Stack: Bildiyimiz stackdi :)
+Register: CPU da saxlanan data ve instructionlar ucun memorydir.
+Counter: Instrcutionlarin ardicilligini saxlayir.
+Context switching: Bir threadden basqa thread e kecishdir. Context switching zamaninda CPU nin registerlerindeki deyerler saxlanilir ve yeni thread ucun yeni deyerler yuklenir.
+Multithreading: Eyni anda programin bir nece opearion heyata kecirmesidir.
+Multitasking: Eyni anda bir nece proqramin heyata kecirmesidir.
+
+Thread stateleri: New, Runnable, Running, Blocked, Waiting, Timed Waiting, Terminated
+
+stop() metodu thread i dayandirir.  Bele threadi start() metodu ile baslatmaq olmur. Deprecateddir. Unsafedir, ozunde saxladigi locku serbest buraxmir.
+suspend() metodu wait() metoduna benzeyir. Threadi dayandirir ve wait halina kecirir. Deprecateddir. Unsafedir, ozunde saxladigi locku serbest buraxmir.
+resume() metodu suspend() metodu ile dayandirilan threadi davam etdirir. Deprecateddir.
+Bu metodlar locku serbest buraxmadigi ucun, deadlock yaradilmasina sebeb ola bilerler.
+
+join() metodu diger threade deyirki, filan thread isini gorub butursin, sonra sen ise dus.
+        thread1.start();
+        thread1.join();
+        thread2.start(); Burda thread2 thread1in isini bitirmeyini gozleyir.
+
+Daemon thread - user defined threadlerden asili olur. User defined threadler isini terminate olunda daemon threadlerde terminate olur. Garbage collector daemon threade ornekdir.
+Thread priority - Hansi threadin prioritysi cox olarsa, hemin threadin run olma ehtimali boyukdur. Bu sadece ehtimaldir. 100 faiz olacaq deye ehtimal yoxdur.
