@@ -1,6 +1,10 @@
 Arrays.sort() - Parametr kimi int[] olarsa, quicksort algoritmi ile sort edir. Parametr kimi wrapper sinif olarsa mergesort.
 Collections.sort() mergesortla isleyir, daxilde Arrays.sort metodu cagirir.
-Priority queue - Queue natural orderla yigilmis formasidir. Heap strukturu ile implement olunur. Default olaraq min heapdir, yeni en kicik element en ustde olur. Deyismek ucun Constructora Comparator parametr vermek lazimdir.
+Priority queue (concrete class) - Queue natural orderla yigilmis formasidir. Heap strukturu ile implement olunur. Default olaraq min heapdir, yeni en kicik element en ustde olur. Deyismek ucun Constructora Comparator parametr vermek lazimdir.
+Deque (interface, queue extends edir) -  Queueden ferqi budur ki, her iki terefden add, delete etmek olur. Threadsafe deyil. Linkedlist kimi
+ArrayDeque (concrete class) - Deque interfaceni implement eden concrete classdir
+Vector (concrete class, list implements edir) - Evveller arraylist evezine istifade olunub, thread safedir
+Stack (concrete class, vectoru extends edir)- LIFO, deque kimidir. Sadece ferqi, stack threadsafedir
 
 HashMap:
 Key duplicate ola bilmir, value ola bilir. Eyni key insert olunsa override olunacaq. Keyde valueda null ola biler. Key null olarsa 1ci buckete dusecek.
