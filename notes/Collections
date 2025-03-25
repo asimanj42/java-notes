@@ -23,3 +23,18 @@ eger hashcodelari beraberdirse, equalslari beraber olmaliya biler, eger equalsla
 Rehashing: HashMapde load factor 0.75dir. 12 element daxil olunca 16*0.75=12 olur, yeni 13 element daxil olunanda 32 buckete kecir. Rehashing zamaninda yeni table yaradilir ve butun Entryler yeni tableye elave olunur. Bu zaman butun Entrylerin hash kodlari yeniden hesablanir.
 Threeify_threeshold: HashMapde 8 element daxil olunca Entrylerin linked listi treeify olunur. Treeify olunma zamani linked listin uzunlugu 8den cox olmalidir. Treeify zamani linked list binary search treeye cevrilir. Treeify zamani linked listin big O(n) complexitysi big O(logn) olur.
 
+public class Employee {
+    private int id;
+    private String name;
+    private String surname;
+}
+
+Eger, equalsda id yazmasam, hashcode id yazsam. Mentiqi xetadir. Id-si ferqlenen obyektlerin equals'i true cixacaq.
+Eger, hashcode id yazsam, equalsda butun parametrleri yazsam, bu zaman hashmap texniki olaraq duz isleyir.
+Sadece performans asagi dusur. Butun obyektler eyni node dusur, linkedlist ve ya tree- ye cevrilir.
+
+Eger, hashcode eynidirse: 
+      1. equals eyni cixsa obyektlerde, o zaman ikinci birincini override edir.
+      2. equals ferqli cixsa, o zaman yan-yana, linkedlist ve ya red-black tree kimi duzulur.
+
+Menim basa dusduyum qederi ile, equals and hashcode hashmap kimi collectionlardan ayriliqda bir zibile derman deyil. Sadece, bir anlayis kimi ortaya atilib.
