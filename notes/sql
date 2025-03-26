@@ -1,0 +1,29 @@
+Database normalizasyon:
+Tekrarlanan datalari azaltmaq, data consistency temin etmek, lazimsiq asiliqlari aradan qaldirmaq ucun istifade olunur.
+1NF: Her recordda bir dene data olmalidir. Setirler unique olmalidir ( primary key olmalidir)
+2NF: 1NF + Tableda bezi sutunlarin primary key ve ya foreign key ile tam elaqesi olmadiqda ortaya cixir (partial asililiq)
+     Adeten, iki dene primary key olan table-larda rast gelinir.
+3NF: 1NF + 2NF + Cədvəldəki heç bir sütun key olmayan digər sütundan asılı olmamalıdır. ( transitive asililiq)
+     Adeten, tek primary key olan table-larda rast gelinir.
+
+  https://www.youtube.com/watch?v=GFQaEYEc8_8
+
+ACID properties:
+Atomicity - Islemler bolunmezdir, ya tamamlanir, ya da gerceklesmez. Xeta bas verse, rollback atilmalidir.
+Consistency - Data her zaman consistency olmalidir. Islem bitdikden sonra, database oz normasinda qalmalidir.
+              Meselen, db-dan telebeni silmek istesek, evvelce onun dersde istiraki silinmelidir.
+Isolation - Paralel transactionlar bir-birlerine tesir etmemelidir. Bir transaction isini bitirmeyibse, diger transaction bu datani gormemelidir.
+Durability - Islem bitibse, data yoxa cixmamilidir. Kartima pul kocururemse, sistem cokse bele, pul menim kartima kocmelidir.
+
+DDL vs DML: 
+DDL (Data Definition Language) - Table, schema  ve s. strukturunu mueyyenlesdirir. Datani deyisdirmirler. Rollback edilmirler.
+  CREATE (Tablo veya nesne oluşturur)
+  ALTER (Table-a column ve s. elave edir ve ya silir)
+  DROP (Tabloyu veya nesneyi tamamen siler)
+  TRUNCATE (Tablodaki tüm verileri siler)
+
+DML (Data Manipulation Language) - Datalar uzerinde islem gerceklesdirir. Rollback oluna bilir.
+  INSERT (Yeni veri ekler)
+  UPDATE (Mevcut veriyi günceller)
+  DELETE (Veriyi siler)
+  SELECT (Veriyi sorgular)
