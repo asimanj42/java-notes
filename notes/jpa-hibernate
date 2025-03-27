@@ -1,0 +1,32 @@
+Transactionlarda concurrency problemleri:
+Dirty read - Bir transaction, diger transactionun commit edilmemis deyerini oxusa yaranir. Ilk transaction rollback etse, oxunan data yanlis olacaq.
+Non-Repeatable Read - Bir transaction eyni datani birden cox oxusa, ferqli neticeler alir. Cunki, diger transaction datani deyisdirir.
+Phantom Read - Bir transaction eyni queryni iki defe calisdirdiginda, ferqli sayida setir donebiler. Cunki, diger transaction yeni data elave ede biler.
+Lost update - Iki transaction eyni datani update etse, biri digerinin deyisikliyini override ede biler.
+
+
+Isolation levels:
+READ UNCOMMITTED - en asagi isolation levels. Yuxaridaki problemlere icaze verir. Performansi coxdur, veri tutuarliligi az. Onerilmir.
+READ COMMITTED - Dirty read-in qarsini alir. Spring, Oracle, Postgre default gelir.
+REPEATABLE READ - Dirty read ve Non-Repeatable Read qarsini alir. MySQL default gelir.
+SERIALIZABLE - Butun data consistency-ni qarsisini alir. Performansi en asagidir. Her queryni sirayla calisdirir.
+Lost update - Optimistic veya Pessimistic Locking hell edir.
+
+
+Locking mexanizmleri:
+Optimistic Locking - Hibernate @Version annotation istifade edir. Iki transaction eyni datani deyiTransactionlarda concurrency problemleri:
+Dirty read -  Bir transaction, diger transactionun commit edilmemis deyerini oxusa yaranir. Ilk transaction rollback etse, oxunan data yanlis olacaq.
+Non-Repeatable Read - Bir transaction eyni datani birden cox oxusa, ferqli neticeler alir. Cunki, diger transaction datani deyisdirir.
+Phantom Read - Bir transaction eyni queryni iki defe calisdirdiginda, ferqli sayida setir donebiler. Cunki, diger transaction yeni data elave ede biler.
+Lost update - Iki transaction eyni datani update etse, biri digerinin deyisikliyini override ede biler.
+
+Isolation levels:
+READ UNCOMMITTED - en asagi isolation levels. Yuxaridaki problemlere icaze verir. Performansi coxdur, veri tutuarliligi az. Onerilmir.
+READ COMMITTED - Dirty read-in qarsini alir. Spring, Oracle, Postgre default gelir.
+REPEATABLE READ - Dirty read ve Non-Repeatable Read qarsini alir. MySQL default gelir.
+SERIALIZABLE - Butun data consistency-ni qarsisini alir. Performansi en asagidir. Her queryni sirayla calisdirir.
+Lost update - Optimistic veya Pessimistic Locking hell edir.
+
+Locking mexanizmleri:
+Optimistic Locking - Hibernate @Version annotation istifade edir. Iki tran0saction eyni datani deyismeye calissa, hibernate datanin en son veriyasini izleyir.
+Pessimistic Locking - Datani muveqqeti kilitleyir, diger transactionlarin istifadesini engelleyir.
